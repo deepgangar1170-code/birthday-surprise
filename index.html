@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For My Pretty Girl 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff0f5;color:#88465f;font-family:Arial,sans-serif;text-align:center}
+section{min-height:100vh;padding:35px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.card{background:white;padding:28px;border-radius:25px;max-width:500px;width:100%;box-shadow:0 8px 25px #e9a5bd55}
+h1{font-size:clamp(2rem,8vw,3rem)}
+p{line-height:1.8;font-size:17px}
+button{background:#ff78a5;color:white;border:0;padding:14px 23px;border-radius:30px;margin:9px;font-size:16px;cursor:pointer}
+button:hover{transform:scale(1.06)}
+.heart{font-size:55px;animation:beat 1s infinite}
+.hidden{display:none!important}
+@keyframes beat{50%{transform:scale(1.2)}}
+</style>
+</head>
+<body>
+
+<section>
+<div class="heart">💗</div>
+<h1>HEY YOUUU!! 🎀</h1>
+<p>HAPPY BIRTHDAY TO THE PRETTIEST HUMAN ALIVE.</p>
+<p>I made you a little surprise. No scams, just your boyfriend being obsessed. 😭</p>
+<button onclick="go('love')">OPEN YOUR SURPRISE 💌</button>
+</section>
+
+<section id="love">
+<div class="card">
+<h1>BREAKING NEWS 🚨</h1>
+<p>Local girl gets even prettier today. Scientists are confused. Boyfriend remains obsessed.</p>
+<p>Happy birthday, pretty girl! You make my ordinary days special. ❤️</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h1>WHY YOU'RE THAT GIRL 💅</h1>
+<p>✨ Your smile: illegal levels of cute.</p>
+<p>😂 Your laugh: my favourite sound.</p>
+<p>💗 Your face: respectfully, WOW.</p>
+<p>👑 Your personality: 10/10.</p>
+<p>🫶 Your existence: my favourite plot twist.</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h1>Okay, jokes aside... 🥺</h1>
+<p>I'm so grateful to have you in my life. You make everything a little brighter.</p>
+<p>I hope this birthday brings you endless happiness and beautiful memories.</p>
+<p>You deserve the entire universe. I love youuu! ❤️</p>
+</div>
+</section>
+
+<section>
+<div class="card" id="question">
+<h1>IMPORTANT QUESTION 👀</h1>
+<p>Since it's your birthday, I think someone as special as you deserves a proper date...</p>
+<h1>WILL YOU GO ON A DATE WITH ME? 💗</h1>
+<button onclick="yes()">YESSS, OBVIOUSLY!! 💖</button>
+<button onclick="no()">NO 😈</button>
+<p id="message"></p>
+</div>
+
+<div class="card hidden" id="answer">
+<div class="heart">🥹❤️</div>
+<h1>YAYYYYY!!</h1>
+<h2>IT'S A DATE, PRETTY GIRL 🎀</h2>
+<p>To: My favourite girl 💗</p>
+<p>From: Your favourite boy (hopefully)</p>
+<p>Date: We'll decide together.</p>
+<p>Time: Whenever you're ready, princess.</p>
+<p>Location: A surprise! 🤫</p>
+<p>Dress code: Just be yourself. You're already my favourite view.</p>
+<p>Mandatory hand-holding. Unlimited hugs included.</p>
+<h2>CAN'T WAIT TO SEE YOU!! ❤️</h2>
+</div>
+</section>
+
+<script>
+function go(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+let count=0;
+function no(){
+let msgs=["ARE YOU SUREEEE? 🥺","Think about unlimited hugs!! 😭","My heart is buffering 💔","PLEASE PRETTY PLEASE 🎀"];
+document.getElementById("message").textContent=msgs[Math.min(count++,3)];
+}
+function yes(){
+document.getElementById("question").classList.add("hidden");
+document.getElementById("answer").classList.remove("hidden");
+go("answer");
+for(let i=0;i<35;i++){
+let h=document.createElement("span");
+h.textContent=["💗","💖","💕","✨"][i%4];
+h.style.cssText=`position:fixed;left:${Math.random()*100}%;top:-30px;font-size:25px;z-index:9;transition:transform 3s,opacity 3s`;
+document.body.appendChild(h);
+setTimeout(()=>{h.style.transform=`translateY(${innerHeight+50}px)`;h.style.opacity=0},50);
+setTimeout(()=>h.remove(),3200);
+}
+}
+</script>
+</body>
+</html>
